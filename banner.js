@@ -1,0 +1,1 @@
+$(document).ready(function(){$.ajax({type:'GET',url:'https://textapi.jawbts.xyz/',data:{},dataType:'JSON',success:function(data){$(".bannerTA").text(data.a);$(".bannerTB").text(data.b)},})});
