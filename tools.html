@@ -1,1 +1,121 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon"type="image/x-icon"href="https://cdn.jawbts.xyz/photos/logo.png"/><link rel="stylesheet"href="http://cdn.jawbts.xyz/uikit.xyz.jawbts-theme.min.css"/><meta charset="utf-8"><meta name="viewport"content="width=device-width, initial-scale=1.0"><style>@import url("css/main.css");</style><script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script><script src="js/lang.js"></script><script src="js/date.js"></script><title>Tools</title></head><body class="uk-background-secondary body-bg"><div class="uk-background-cover uk-background-fixed div-bg"><!--导航栏-大--><nav name="top"uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200"class="nav-b"uk-navbar><div class="uk-navbar-left"><ul class="uk-navbar-nav"><li><a href="index.html"key="主页"></a></li><li><a href="theNews.html"key="新闻"></a></li><li><a href="projects.html"key="项目"></a></li><li class="uk-active"><a href="#top"uk-scroll key="工具"></a></li></ul></div><div class="uk-navbar-right"><ul class="uk-navbar-nav"><li><a href="about.html"key="关于"></a></li><li><a uk-icon="icon: cog"></a><div class="uk-navbar-dropdown"uk-dropdown="pos: bottom-left; animation: uk-animation-slide-top-small; duration: 800"><ul class="uk-nav uk-navbar-dropdown-nav"><li><a key="语言"></a><div uk-dropdown="pos: left-center; animation: uk-animation-slide-right-small; duration: 800"><ul class="uk-nav uk-dropdown-nav"><li><a class="langchanger"id="en_us">English</a></li><li><a class="langchanger"id="zh_cn">中国大陆</a></li></ul></div></li><li><a href="auth.html"key="登陆"></a></li></ul></div></li></ul></div></nav><!--导航栏-小--><div class="uk-flex uk-flex-middle"><a class="uk-icon-link nav-s2"uk-icon="icon: table; ratio: 1.5"type="button"></a><div uk-dropdown><ul class="uk-nav uk-dropdown-nav"><li class="uk-nav-header"key="页面"></li><li><a href="index.html"key="主页"></a></li><li><a href="theNews.html"key="新闻"></a></li><li><a href="projects.html"key="项目"></a></li><li class="uk-active"><a href="#top"uk-scroll key="工具"></a></li><li><a href="about.html"key="关于"></a></li><li class="uk-nav-header"key="设置"></li><li><a key="语言"></a></li><div uk-dropdown="pos: right-center; animation: uk-animation-slide-right-small; duration: 800"><ul class="uk-nav uk-dropdown-nav"><li><a class="langchanger"id="en_us">English</a></li><li><a class="langchanger"id="zh_cn">中国大陆</a></li></ul></div><li><a href="auth.html"key="登陆"></a></li></ul></div></div></div><div style="margin-bottom: 400px; margin-top: 5%;"class="uk-grid-large uk-text-center uk-flex-center article-1"uk-grid><div class="uk-width-5-6"><div class="uk-card uk-card-default uk-card-body article-card"><h2 class="article-h2"key="转换: MC天数 -> 年 月 日 星期"></h2><p key="与现实同步"></p><button class="uk-button uk-button-default"onclick="input()"key="点击输入天数"></button><br/><br/><div><p style="display: inline;"key="禁用MC准确时间"></p><input type="checkbox"name="timeOff"><p style="display: inline;"key="禁用现实准确时间"></p><input type="checkbox"name="timeOff"></div><p key="在此填入MC一天中的时间 格式为 xx:xx"></p><div><input id="timeHour"type="text"value="">:<input id="timeMinute"type="text"value=""></div><p id="output"></p></div></div></div><footer id="nav-bottom"><div><a style="display:inline-block"href="#top"uk-scroll></a><h1 style="display:inline-block"class="logo-text">A W B T S</h1></div><p>©2021-2023 Jawbts.All Rights Reserved</p></footer></body></html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="https://cdn.jawbts.org/photos/logo.png" />
+		<link rel="stylesheet" href="http://cdn.jawbts.org/uikit.xyz.jawbts-theme.min.css" />
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style>
+			@import url("css/main.css");
+		</style>
+
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
+		<script src="js/lang.js"></script>
+		<script src="js/date.js"></script>
+
+		<title>Tools</title>
+	</head>
+	<body class="uk-background-secondary body-bg">
+		<div class="uk-background-cover uk-background-fixed div-bg">
+			<!--导航栏-大-->
+			<nav name="top"
+				uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200"
+				class="nav-b" uk-navbar>
+				<div class="uk-navbar-left">
+					<ul class="uk-navbar-nav">
+						<li><a href="index.html" key="主页"></a></li>
+						<li><a href="theNews.html" key="新闻"></a></li>
+						<li><a href="projects.html" key="项目"></a></li>
+						<li class="uk-active"><a href="#top" uk-scroll key="工具"></a></li>
+					</ul>
+				</div>
+				<div class="uk-navbar-right">
+					<ul class="uk-navbar-nav">
+						<li><a href="about.html" key="关于"></a></li>
+						<li>
+							<a uk-icon="icon: cog"></a>
+							<div class="uk-navbar-dropdown"
+								uk-dropdown="pos: bottom-left; animation: uk-animation-slide-top-small; duration: 800">
+								<ul class="uk-nav uk-navbar-dropdown-nav">
+									<li>
+										<a key="语言"></a>
+										<div
+											uk-dropdown="pos: left-center; animation: uk-animation-slide-right-small; duration: 800">
+											<ul class="uk-nav uk-dropdown-nav">
+												<li><a class="langchanger" id="en_us">English</a></li>
+												<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
+											</ul>
+										</div>
+									</li>
+									<li><a href="auth.html" key="登陆"></a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!--导航栏-小-->
+			<div class="uk-flex uk-flex-middle">
+				<a class="uk-icon-link nav-s2" uk-icon="icon: table; ratio: 1.5" type="button"></a>
+				<div uk-dropdown>
+					<ul class="uk-nav uk-dropdown-nav">
+						<li class="uk-nav-header" key="页面"></li>
+						<li><a href="index.html" key="主页"></a></li>
+						<li><a href="theNews.html" key="新闻"></a></li>
+						<li><a href="projects.html" key="项目"></a></li>
+						<li class="uk-active"><a href="#top" uk-scroll key="工具"></a></li>
+						<li><a href="about.html" key="关于"></a></li>
+						<li class="uk-nav-header" key="设置"></li>
+						<li><a key="语言"></a></li>
+						<div uk-dropdown="pos: right-center; animation: uk-animation-slide-right-small; duration: 800">
+							<ul class="uk-nav uk-dropdown-nav">
+								<li><a class="langchanger" id="en_us">English</a></li>
+								<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
+							</ul>
+						</div>
+						<li><a href="auth.html" key="登陆"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div style="margin-bottom: 400px; margin-top: 5%;" class="uk-grid-large uk-text-center uk-flex-center article-1"
+			uk-grid>
+			<div class="uk-width-5-6">
+				<div class="uk-card uk-card-default uk-card-body article-card">
+					<h2 class="article-h2" key="转换: MC天数 -> 年 月 日 星期"></h2>
+					<p key="与现实同步"></p>
+					<button class="uk-button uk-button-default" onclick="input()" key="点击输入天数"></button>
+					<br /> <br />
+					<div>
+						<p style="display: inline;" key="禁用MC准确时间"></p>
+						<input type="checkbox" name="timeOff">
+						<p style="display: inline;" key="禁用现实准确时间"></p>
+						<input type="checkbox" name="timeOff">
+					</div>
+					<p key="在此填入MC一天中的时间 格式为 xx:xx"></p>
+					<div>
+						<input id="timeHour" type="text" value="">
+						:
+						<input id="timeMinute" type="text" value="">
+					</div>
+					<p id="output"></p>
+				</div>
+			</div>
+		</div>
+		<footer id="nav-bottom">
+			<div>
+				<a style="display:inline-block" href="#top" uk-scroll></a>
+				<h1 style="display:inline-block" class="logo-text">A W B T S</h1>
+			</div>
+			<p>© 2021-2023 Jawbts. All Rights Reserved</p>
+			<a style="display: inline;"
+				href="https://github.com/winner32/winner32.github.io/blob/main/README.md"
+				key="<用户服务协议和隐私政策>"></a>
+		</footer>
+	</body>
+</html>

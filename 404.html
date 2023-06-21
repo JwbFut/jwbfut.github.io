@@ -9,18 +9,17 @@
 
 		<style>
 			@import url("css/main.css");
-			@import url("css/index.css");
 		</style>
 
 		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
 		<script src="js/lang.js"></script>
-		<script src="js/banner.js"></script>
+		<script src="js/auth.js"></script>
 
-		<title>Jawbts</title>
+		<title>Jawbts, but 404</title>
 	</head>
-	<body class="uk-background-secondary body-bg">
+	<body class="uk-background-secondary body-bg" style="overflow:hidden">
 		<div class="uk-background-cover uk-background-fixed div-bg">
 			<!--导航栏-大-->
 			<nav name="top"
@@ -28,7 +27,7 @@
 				class="nav-b" uk-navbar>
 				<div class="uk-navbar-left">
 					<ul class="uk-navbar-nav">
-						<li class="uk-active"><a href="#top" uk-scroll key="主页"></a></li>
+						<li><a href="index.html" key="主页"></a></li>
 						<li><a href="theNews.html" key="新闻"></a></li>
 						<li><a href="projects.html" key="项目"></a></li>
 						<li><a href="tools.html" key="工具"></a></li>
@@ -52,7 +51,7 @@
 											</ul>
 										</div>
 									</li>
-									<li><a href="auth.html" key="登陆"></a></li>
+									<li class="uk-active"><a href="#top" uk-scroll key="登陆"></a></li>
 								</ul>
 							</div>
 						</li>
@@ -65,7 +64,7 @@
 				<div uk-dropdown>
 					<ul class="uk-nav uk-dropdown-nav">
 						<li class="uk-nav-header" key="页面"></li>
-						<li class="uk-active"><a href="#top" uk-scroll key="主页"></a></li>
+						<li><a href="index.html" key="主页"></a></li>
 						<li><a href="theNews.html" key="新闻"></a></li>
 						<li><a href="projects.html" key="项目"></a></li>
 						<li><a href="tools.html" key="工具"></a></li>
@@ -78,62 +77,17 @@
 								<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
 							</ul>
 						</div>
-						<li><a href="auth.html" key="登陆"></a></li>
+						<li class="uk-active"><a href="#top" uk-scroll key="登陆"></a></li>
 					</ul>
 				</div>
 			</div>
-			<section id="banner">
-				<div class="inner">
-					<header>
-						<h1>J a w b t s</h1>
-					</header>
-					<p class="bannerTA">Loading...</p>
-					<p class="bannerTB">加载中......</p>
-					<footer>
-						<a class="uk-button uk-button-default" uk-scroll style="height: 50px;" href="#main"
-							key="了解更多"></a>
-					</footer>
-				</div>
-			</section>
-			<div style="padding-top: 10%;">
-				<div id="main"></div>
-			</div>
 		</div>
-		<div class="uk-grid-large uk-text-center uk-flex-center article-1" style="padding-top: 10%;" uk-grid>
-			<div class="uk-width-5-6" uk-parallax="opacity: 0, 5">
+		<div style="margin-top: 5%;" class="uk-grid-large uk-text-center uk-flex-center article-1" uk-grid>
+			<div class="uk-width-5-6">
 				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2" key="由来"></h2>
-					<p key="WisW为了命名他曾经搭建的一个服务器, 于是就组建了Jawbts."></p>
-					<p key="至今, Jawbts的正式现实人员还是只有一个."></p>
-					<button class="uk-button uk-button-default" style="height: 40px;"
-						onclick="window.location.href='about.html'" key="了解更多"></button>
-				</div>
-			</div>
-			<div class="uk-width-5-6" uk-parallax="opacity: 0, 5">
-				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2" key="新闻"></h2>
-					<p key="一些大事和计划会被放在这里."></p>
-					<p key="当然, 这页不是动态更新的. 你可以前往WinsreWu的B站以获取最新动态."></p>
-					<button class="uk-button uk-button-default" style="height: 40px;"
-						onclick="window.location.href='theNews.html'" key="了解更多"></button>
-				</div>
-			</div>
-			<div class="uk-width-5-6" uk-parallax="opacity: 0, 5">
-				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2" key="项目"></h2>
-					<p key="Jawbts会不时更新一些项目."></p>
-					<p key="这些是仅在更新的项目.已经不会更新的会被放进新闻."></p>
-					<button class="uk-button uk-button-default" style="height: 40px;"
-						onclick="window.location.href='projects.html'" key="探索更多"></button>
-				</div>
-			</div>
-			<div class="uk-width-5-6" uk-parallax="opacity: 0, 5">
-				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2" key="工具"></h2>
-					<p key="Jawbts的一些工具会被放在这儿."></p>
-					<p key="有用的小东西们."></p>
-					<button class="uk-button uk-button-default" style="height: 40px;"
-						onclick="window.location.href='tools.html'" key="探索更多"></button>
+					<h2 style="font-weight: 700;" class="article-h2">404</h2>
+					<h2 class="article-h2">Page Not Found</h2>
+					<h2 class="article-h2">)=</h2>
 				</div>
 			</div>
 		</div>
@@ -143,8 +97,7 @@
 				<h1 style="display:inline-block" class="logo-text">A W B T S</h1>
 			</div>
 			<p>© 2021-2023 Jawbts. All Rights Reserved</p>
-			<a style="display: inline;"
-				href="https://github.com/winner32/winner32.github.io/blob/main/README.md"
+			<a style="display: inline;" href="https://github.com/winner32/winner32.github.io/blob/main/README.md"
 				key="<用户服务协议和隐私政策>"></a>
 		</footer>
 	</body>
