@@ -1,0 +1,55 @@
+<body>	
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	玩家名: <input type="text" id="pname"> <br />
+	SessionId: <input type="text" id="session">
+	<button type="button" onclick="nameReady()">获取皮肤</button>
+	
+	<br />
+	图片Base64: <input type="text" id="base64img">
+	<button type="button" onclick="baseReady()">生成png</button>
+	
+	<canvas id="canvas" width="64px" height="64px"></canvas>
+	<a id=dld href="" download="skin">点击以下载图片</a>
+	
+	<script>
+		function nameReady() {
+			$.ajax({
+				type: 'GET',
+				url: 'http://127.0.0.1:8787/mc/getSkin?name=' + document.getElementById("pname").value + "&sessionId=" + document.getElementById("session").value,
+				data: {},
+				dataType: 'JSON',
+				success: function(data) {
+					console.log(data.data);
+					
+					var counter = 0;
+					
+					var ctx = document.getElementById("canvas").getContext("2d");
+					var cas = document.getElementById("canvas");
+					
+					cas.width = cas.width;
+					
+					for (var i = 0; i < 64; i++) {
+						for (var j = 0; j < 64; j++) {
+							var f = counter * 8;
+							var a = parseInt(data.data.substring(f, f + 2), 16);
+							var b = parseInt(data.data.substring(f + 2, f + 4), 16);
+							var c = parseInt(data.data.substring(f + 4, f + 6), 16);
+							var d = parseInt(data.data.substring(f + 6, f + 8), 16);
+							counter++;
+							ctx.fillStyle = "rgba("+a+","+b+","+c+","+d+")";
+							ctx.fillRect(j, i, 1, 1);
+						}
+					}
+					
+					document.getElementById("dld").href = cas.toDataURL("img/png", 1);
+				},
+			})
+		}
+		
+		function baseReady() {
+			var data = document.getElementById("base64img").value;
+			
+			console.log(data);
+		}
+	</script>
+</body>
