@@ -63,6 +63,8 @@ var arrLang = {
 		"<用户服务协议和隐私政策>": "\"User Service Agreement and Privacy Policy\"(<用户服务协议和隐私政策>)",
 		"我已知晓, 开始登陆": "DONT SIGN IN PLS",
 		"这是员工通道, 我们强烈不建议您登陆, 如果登陆, 后果自负": "This is a staff channel, we strongly discourage you from logging in, if you do, you will be responsible for the consequences.",
+		"转换: Jawbts标准时间戳 <-> Jawbts标准时间": "Convert: Jawbts standard timestamp <-> Jawbts standard time",
+		"点击输入时间戳": "Click to enter a timestamp"
 	}
 };
 var lang = "zh_cn";
