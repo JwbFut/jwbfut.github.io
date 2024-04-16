@@ -8,35 +8,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<style>
-			@import url("../css/main.css");
+			@import url("css/main.css");
 		</style>
 
 		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.2/dist/js/uikit-icons.min.js"></script>
-		<script src="../js/lang.js"></script>
-		<script src="../js/auth.js"></script>
-
-		<script type="module">
-			import Auth from "../js/authChecker.js";
-			const auth = new Auth();
-
-			function callback(result) {
-				if (result === true) {
-					$("#logintitle").text("Success");
-					window.location.href = "https://www.jawbts.org/logged/user";
-				} else {
-					$("#logintitle").text("LoginFailed: [ " + result + " ]  正在重定向至登陆页面(30s)......");
-					setTimeout(backToAuth, 30000);
-				}
-			}
-			
-			function backToAuth() {
-				window.location.href = "https://www.jawbts.org/auth";
-			}
-
+		<script src="js/lang.js"></script>
+		<script src="js/auth.js"></script>
+		
+		<script>
 			$(document).ready(function() {
-				auth.checkLoginByHash(callback);
+				const hash = window.location.hash;
+				const token = hash.match(/token=([\w]+)/);
+				const fail_reason = hash.match(/fail_reason=([\w]+)/)
+				if (token != undefined) {
+					localStorage.setItem("token", token[1]);
+					window.location.href = "logged/index.html";
+				}
+				if (fail_reason != undefined) {
+					$("#output").text("登陆失败: " + fail_reason[1]);
+				}
 			});
 		</script>
 
@@ -74,7 +66,6 @@
 											</ul>
 										</div>
 									</li>
-									<li class="uk-active"><a href="#top" uk-scroll key="登陆"></a></li>
 								</ul>
 							</div>
 						</li>
@@ -99,8 +90,7 @@
 								<li><a class="langchanger" id="en_us">English</a></li>
 								<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
 							</ul>
-						</div>
-						<li class="uk-active"><a href="#top" uk-scroll key="登陆"></a></li>
+						</div>						
 					</ul>
 				</div>
 			</div>
@@ -108,7 +98,20 @@
 		<div style="margin-top: 5%;" class="uk-grid-large uk-text-center uk-flex-center article-1" uk-grid>
 			<div class="uk-width-5-6">
 				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 id="logintitle" class="article-h2">登陆中</h2>
+					<h2 id="logintitle" class="article-h2" key="登陆"></h2>
+					<input id="user_name" type="text" placeholder="username" value="" size="20" style="height: 30px;text-align: center;">
+					<br /><br />
+					<button id="loginButton" class="uk-button uk-button-default" onclick="tryLogin()" key="我已知晓, 开始登陆"></button>
+					<br />
+					<p id="output" style="color: coral;"></p>
+					<div class="uk-alert-danger" uk-alert>
+						<a class="uk-alert-close" uk-close></a>
+						<p key="这是员工通道, 我们强烈不建议您登陆, 如果登陆, 后果自负"></p>
+					</div>
+					<p style="display: inline;" key="我们不建议您登陆. 如果您登陆, 即代表您同意我们的"></p>
+					<a style="display: inline;"
+						href="https://github.com/jwbfut/jwbfut.github.io/blob/main/README.md"
+						key="<用户服务协议和隐私政策>"></a>
 				</div>
 			</div>
 		</div>
@@ -117,9 +120,7 @@
 				<a style="display:inline-block" href="#top" uk-scroll></a>
 				<h1 style="display:inline-block" class="logo-text">A W B T S</h1>
 			</div>
-			<p>© 2021-2023 Jawbts. All Rights Reserved</p>
-			<a style="display: inline;" href="https://github.com/jwbfut/jwbfut.github.io/blob/main/README.md"
-				key="<用户服务协议和隐私政策>"></a>
+			<p>© 2021-2024 Jawbts. All Rights Reserved</p>
 		</footer>
 	</body>
 </html>

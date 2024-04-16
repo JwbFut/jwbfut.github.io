@@ -51,7 +51,6 @@
 											</ul>
 										</div>
 									</li>
-									<li><a href="auth.html" key="登陆"></a></li>
 								</ul>
 							</div>
 						</li>
@@ -77,7 +76,6 @@
 								<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
 							</ul>
 						</div>
-						<li><a href="auth.html" key="登陆"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -87,17 +85,24 @@
 			uk-grid>
 			<div class="uk-width-5-6">
 				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2" key="转换: MC天数 -> 年 月 日 星期"></h2>
-					<p key="与现实同步"></p>
-					<button class="uk-button uk-button-default" onclick="input()" key="点击输入天数"></button>
+					<h2 class="article-h2"
+						key="转换: MC天数 -> 年 月 日 星期"
+						key_en_us="Convert: MC Days -> Year, Month, Day, Day of Week"></h2>
+					<button class="uk-button uk-button-default" onclick="input()"
+							key="点击输入天数" key_en_us="Click to enter days"></button>
 					<br /> <br />
 					<div>
-						<p style="display: inline;" key="禁用MC准确时间"></p>
+						<p 	style="display: inline;"
+							key="禁用MC准确时间"
+							key_en_us="Disable MC Accurate Time"></p>
 						<input type="checkbox" name="timeOff">
-						<p style="display: inline;" key="禁用现实准确时间"></p>
+						<p 	style="display: inline;"
+							key="禁用现实准确时间"
+							key_en_us="Disable Realistic Accurate Time"></p>
 						<input type="checkbox" name="timeOff">
 					</div>
-					<p key="在此填入MC一天中的时间 格式为 xx:xx"></p>
+					<p 	key="在此填入MC一天中的时间 格式为 xx:xx"
+						key_en_us="Fill in the MC's time of day here. The format is xx:xx"></p>
 					<div>
 						<input id="timeHour" type="text" value="">
 						:
@@ -111,9 +116,23 @@
 			uk-grid>
 			<div class="uk-width-5-6">
 				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2" key="转换: Jawbts标准时间戳 <-> Jawbts标准时间"></h2>
-					<button class="uk-button uk-button-default" onclick="inputSTT()" key="点击输入时间戳"></button>
+					<h2 class="article-h2"
+						key="转换: Jawbts标准时间戳(JSTS) <-> Jawbts标准时间(JST)"
+						key_en_us="Convert: Jawbts standard timestamp(JSTS) <-> Jawbts standard time(JST)"></h2>
+					<button class="uk-button uk-button-default" onclick="inputSTT()"
+							key="点击输入时间戳(JSTS)" key_en_us="Click to enter a timestamp (JSTS)"></button>
 					<p id="output2"></p>
+					<button class="uk-button uk-button-default" style="margin-bottom: 5px;" onclick="inputTTS()"
+							key="点击生成时间戳" key_en_us="Click Generate Timestamp(JSTS)"></button>
+					<div>
+						<input id="t_year" type="number" value="" placeholder="Year (Starts with 1)">
+						<input id="t_month" type="number" value="" placeholder="Month (1)">
+						<input id="t_day" type="number" value="" placeholder="Day (1)">
+						<input id="t_hour" type="number" value="" placeholder="Hour (0)">
+						<input id="t_minute" type="number" value="" placeholder="Minute (0)">
+						<input id="t_second" type="number" value="" placeholder="Second (0)">
+					</div>
+					<p id="output_TTS"></p>
 				</div>
 			</div>
 		</div>
@@ -122,10 +141,7 @@
 				<a style="display:inline-block" href="#top" uk-scroll></a>
 				<h1 style="display:inline-block" class="logo-text">A W B T S</h1>
 			</div>
-			<p>© 2021-2023 Jawbts. All Rights Reserved</p>
-			<a style="display: inline;"
-				href="https://github.com/jwbfut/jwbfut.github.io/blob/main/README.md"
-				key="<用户服务协议和隐私政策>"></a>
+			<p>© 2021-2024 Jawbts. All Rights Reserved</p>
 		</footer>
 	</body>
 </html>

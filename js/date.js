@@ -66,15 +66,34 @@ function dayToDate(a) {
 
 function inputSTT() {
 	document.getElementById("output2").innerHTML = "";
-	var a = prompt('输入时间戳');
-	if (isData(a) != "ok") {
-		window.alert(isData(a));
+	var time_stamp = prompt('输入时间戳');
+	if (isData(time_stamp) != "ok") {
+		window.alert(isData(time_stamp));
 		return;
 	}
-	var date = dayToDate(Math.floor(a / 86400) + 1);
-	document.getElementById("output2").innerHTML = date.b + "年" + date.g + "月" + date.c + "日 "
-	+ Math.floor(a / 3600 % 24).toString().padStart(2, "0") + ":" + Math.floor(a % 3600 / 60).toString().padStart(2, "0")
-	+ ":" + (a % 60).toString().padStart(2, "0");
+	var sec = time_stamp % 60;
+	var min = Math.floor(time_stamp % 3600 / 60);
+	var hour = Math.floor(time_stamp / 3600 % 24);
+	
+	var days = Math.floor(time_stamp / 3600 / 24);
+	var day = days % 30 + 1;
+	var month = Math.floor(days / 30) % 12 + 1;
+	var year = Math.floor(days / 30 / 12) + 1;
+	
+	document.getElementById("output2").innerHTML = year + "年" + month + "月" + day + "日 "
+	+ hour.toString().padStart(2, "0") + ":" + min.toString().padStart(2, "0")
+	+ ":" + sec.toString().padStart(2, "0");
+}
+
+function inputTTS() {
+	document.getElementById("output_TTS").innerHTML = "";
+	var y = +document.getElementById("t_year").value;
+	var mon = +document.getElementById("t_month").value;
+	var d = +document.getElementById("t_day").value;
+	var h = +document.getElementById("t_hour").value;
+	var min = +document.getElementById("t_minute").value;
+	var s = +document.getElementById("t_second").value;
+	document.getElementById("output_TTS").innerHTML = (((((y - 1) * 12 + mon - 1) * 30 + d - 1) * 24 + h) * 60 + min) * 60 + s;
 }
 
 function input() {
