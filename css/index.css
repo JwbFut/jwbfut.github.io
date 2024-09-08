@@ -1,13 +1,13 @@
 @media only screen and (max-width: 499px) {
 	.div-bg {
-		background-image: url(https://cdn.jawbts.org/photos/camp-wikiBg2.png);
+		background-image: url(https://cdn.jawbts.org/photos/camp-wikiBg2.webp);
 		height: 12%;
 	}
 }
 
 @media only screen and (min-width: 500px) {
 	.div-bg {
-		background-image: url(https://cdn.jawbts.org/photos/camp-wikiBg.png);
+		background-image: url(https://cdn.jawbts.org/photos/camp-wikiBg.webp);
 		height: 25%;
 	}
 }
