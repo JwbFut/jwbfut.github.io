@@ -16,6 +16,7 @@
 		<script src="https://cdn.jawbts.org/npm/uikit@3.2.2/dist/js/uikit-icons.min.js.www"></script>
 		<script src="js/lang.js"></script>
 		<script src="js/date.js"></script>
+		<script src="js/tool.js"></script>
 
 		<title>Tools</title>
 	</head>
@@ -83,6 +84,32 @@
 
 		<div style="margin-bottom: 20px; margin-top: 5%;" class="uk-grid-large uk-text-center uk-flex-center article-1"
 			uk-grid>
+			<div class="uk-width-5-6">
+				<div class="uk-card uk-card-default uk-card-body article-card">
+					<h2 class="article-h2"
+						key="随机数生成器"
+						key_en_us="Random Number Generator"></h2>
+					<h2 class="article-h2" id="r_output"></h2>
+					<button class="uk-button uk-button-default" onclick="start_rand()"
+							key="开关" key_en_us="Switch"></button>
+					<br />
+					<p 	key="总数目 (如10意味着1-10) :"
+						key_en_us="Total (eg 10 means 1-10):"></p>
+					<div>
+						<input id="r_total" type="text" value="10">
+					</div>
+					<p 	key="排除对象 (如10-20,21 注: 10和20也会被排除) :"
+						key_en_us="Exclude (eg 10-20,21 Note: 10 and 20 will also be excluded):"></p>
+					<div>
+						<input id="r_exclude" type="text" value="">
+					</div>
+                    <br />
+                    <button class="uk-button uk-button-default" onclick="save_config()"
+							key="保存配置" key_en_us="Save Configuration"></button>
+                    <div id="r_config_output"></div>
+                    <br />
+				</div>
+			</div>
 			<div class="uk-width-5-6">
 				<div class="uk-card uk-card-default uk-card-body article-card">
 					<h2 class="article-h2"
