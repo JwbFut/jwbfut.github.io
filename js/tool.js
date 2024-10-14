@@ -1,31 +1,79 @@
 window.onload = on_config_change;
 
+class Interval {
+    /**
+     * left are included, right are not included
+     * @param {*} left 
+     * @param {*} right 
+     */
+    constructor(left, right) {
+        this.left = left * 1;
+        this.right = right * 1;
+    }
+
+    exclude(left, right) {
+        // if the interval is completely inside the excluded interval, return empty interval
+        if (this.left >= left && this.right <= right) return [new Interval(0, 0)];
+        // if the excluded interval is completely outside the interval, return the interval
+        if (left >= this.right || right <= this.left) return [this];
+        // if the excluded interval is inside the interval, return two intervals
+        if (left > this.left && right < this.right) return [new Interval(this.left, left), new Interval(right, this.right)];
+        // if the excluded interval overlaps the left side of the interval, return one interval
+        if (left <= this.left && right >= this.left) return [new Interval(right, this.right)];
+        // if the excluded interval overlaps the right side of the interval, return one interval
+        if (left <= this.right && right >= this.right) return [new Interval(this.left, left)];
+
+        // should not reach here
+        return null;
+    }
+
+    count() {
+        return this.right - this.left;
+    }
+
+    toString() {
+        return "[" + this.left + ", " + this.right + ")";
+    }
+}
+
 function setO(x) {
 	document.getElementById("r_output").innerHTML = x;
 }
 
 let flag = false;
 
+let intervals_cache = [];
+function compile_intervals(exclude) {
+    let intervals = [new Interval(1, document.getElementById("r_total").value * 1 + 1)];
+    for (let i in exclude) {
+        if (exclude[i].includes("-")) {
+            let k1 = exclude[i].split("-")[0],
+                k2 = exclude[i].split("-")[1] * 1 + 1;
+            intervals = intervals.flatMap(x => x.exclude(k1, k2));
+        } else {
+            intervals = intervals.flatMap(x => x.exclude(exclude[i], exclude[i] * 1 + 1));
+        }
+    }
+    intervals_cache = intervals;
+}
+
 function k(a) {
 	if (!flag) return;
-	localStorage.setItem("exclude", document.getElementById("r_exclude").value);
-	let exclude = document.getElementById("r_exclude").value.split(",");
 
-    let choices = [];
-    for (let i = 1; i <= document.getElementById("r_total").value; i++) {
-        let f_1 = false;
-        for (let j in exclude) {
-            if (i == exclude[j]) f_1 = true;
-            if (exclude[j].includes("-")) {
-                let k1 = exclude[j].split("-")[0],
-                    k2 = exclude[j].split("-")[1];
-                if (i >= k1 && i <= k2) f_1 = true;
+    let sum = intervals_cache.flatMap(x => x.count()).reduce((a, b) => a + b, 0);
+    let pick_one = Math.floor(Math.random() * sum);
+    let n = "None";
+    if (sum != 0) {
+        for (let i in intervals_cache) {
+            let count = intervals_cache[i].count();
+            if (pick_one < count) {
+                n = intervals_cache[i].left + pick_one;
+                break;
             }
+            pick_one -= count;
         }
-        if (!f_1) choices.push(i);
     }
 
-    let n = choices.length == 0 ? "None" : choices[Math.floor(Math.random() * choices.length)];
 	setO(n);
 	setTimeout(() => k(--a), 100);
 }
@@ -35,6 +83,11 @@ function getR() {
 		flag = false;
 	} else {
 		flag = true;
+
+        localStorage.setItem("exclude", document.getElementById("r_exclude").value);
+	    let exclude = document.getElementById("r_exclude").value.split(",");
+        compile_intervals(exclude);
+
 		k(10);
 	}
 }
