@@ -35,7 +35,7 @@ jobs:
       - name: Minify Pages
         run: |
           docker pull tdewolff/minify
-          docker run -rm -v $(pwd):/tmp/jwbfut.github.io tdewolff/minify -r /tmp/jwbfut.github.io/ --exclude /tmp/jwbfut.github.io/out/** -o /tmp/jwbfut.github.io/out/
+          docker run -v $(pwd):/tmp/jwbfut.github.io tdewolff/minify -r /tmp/jwbfut.github.io/ --exclude /tmp/jwbfut.github.io/out/** -o /tmp/jwbfut.github.io/out/
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
