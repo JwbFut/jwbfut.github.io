@@ -41,7 +41,7 @@ jobs:
       - name: Minify Pages
         run: |
           docker pull tdewolff/minify
-          docker run -v $(pwd):/tmp/jwbfut.github.io tdewolff/minify -r /tmp/jwbfut.github.io/_site_unminified -o /tmp/jwbfut.github.io/_site
+          docker run -v $(pwd):/tmp/jwbfut.github.io tdewolff/minify -r /tmp/jwbfut.github.io/_site_unminified/ -o /tmp/jwbfut.github.io/_site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
