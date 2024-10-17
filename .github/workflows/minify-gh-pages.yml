@@ -32,16 +32,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Minify Pages
-        run: |
-          docker pull tdewolff/minify
-          docker run -v $(pwd):/tmp/jwbfut.github.io tdewolff/minify -r /tmp/jwbfut.github.io/ --exclude /tmp/jwbfut.github.io/out/** -o /tmp/jwbfut.github.io/out/
-
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./out/
-          destination: ./_site
+          source: ./
+          destination: ./_site_unminified
+
+      - name: Minify Pages
+        run: |
+          docker pull tdewolff/minify
+          docker run -v $(pwd):/tmp/jwbfut.github.io tdewolff/minify -r /tmp/jwbfut.github.io/_site_unminified -o /tmp/jwbfut.github.io/_site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
