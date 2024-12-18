@@ -87,6 +87,32 @@
 			<div class="uk-width-5-6">
 				<div class="uk-card uk-card-default uk-card-body article-card">
 					<h2 class="article-h2"
+						key="MC要塞位置计算器"
+						key_en_us="MC Stronghold Pos Calculator"></h2>
+					<p 	key="扔末影之眼的位置:"
+						key_en_us="The pos you throw the eye of ender:"></p>
+					<div>
+						<input id="mspc_x" type="number" value="" placeholder="x">
+						<input id="mspc_y" type="number" value="" placeholder="z">
+					</div>
+					<p 	key="末影之眼的角度:"
+						key_en_us="The angle of the eye of ender:"></p>
+					<input id="mspc_deg" type="number" value="">
+
+					<br /> <br />
+					<button class="uk-button uk-button-default" onclick="mspc_save_pos()"
+							key="保存位置" key_en_us="Save Pos"></button>
+					<br /> <br />
+                    <div id="mspc_pos_output"></div>
+					
+					<h2 class="article-h2" id="mspc_output"></h2>
+					
+                    <br />
+				</div>
+			</div>
+			<div class="uk-width-5-6">
+				<div class="uk-card uk-card-default uk-card-body article-card">
+					<h2 class="article-h2"
 						key="随机数生成器"
 						key_en_us="Random Number Generator"></h2>
 					<h2 class="article-h2" id="r_output"></h2>

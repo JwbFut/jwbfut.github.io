@@ -1,4 +1,57 @@
-window.onload = on_config_change;
+window.onload = function() {
+    on_config_change();
+}
+
+mspc_pos = [];
+function on_mspc_update() {
+    let output = "";
+    for (let i in mspc_pos) {
+        output += "x: " + mspc_pos[i].x + ", z: " + mspc_pos[i].y + ", deg: " + mspc_pos[i].deg + "<br />";
+    }
+    document.getElementById("mspc_pos_output").innerHTML = output;
+
+    if (mspc_pos.length < 2) return;
+
+    let funcs = [];
+    for (let i in mspc_pos) {
+        let k = 1 / Math.tan(-mspc_pos[i].deg / 180 * Math.PI);
+        funcs.push({
+            k: k,
+            b: mspc_pos[i].y - k * mspc_pos[i].x
+        })
+    }
+    
+    pos_x_sum = 0;
+    pos_y_sum = 0;
+    sum = 0;
+    for (let i in mspc_pos) {
+        for (let j in mspc_pos) {
+            if (i == j) continue;
+            // 求一次函数交点
+            let x = (funcs[j].b - funcs[i].b) / (funcs[i].k - funcs[j].k);
+            let y = funcs[i].k * x + funcs[i].b;
+            pos_x_sum += x;
+            pos_y_sum += y;
+            sum++;
+        }
+    }
+    let pos_x = pos_x_sum / sum;
+    let pos_y = pos_y_sum / sum;
+    document.getElementById("mspc_output").innerHTML = "x: " + pos_x.toFixed(0) + ", z: " + pos_y.toFixed(0);
+}
+
+function mspc_save_pos() {
+    x = document.getElementById("mspc_x").value;
+    y = document.getElementById("mspc_y").value;
+    deg = document.getElementById("mspc_deg").value;
+
+    document.getElementById("mspc_x").value = "";
+    document.getElementById("mspc_y").value = "";
+    document.getElementById("mspc_deg").value = "";
+    mspc_pos.push({x: x, y: y, deg: deg});
+
+    on_mspc_update();
+}
 
 class Interval {
     /**
