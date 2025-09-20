@@ -1,200 +1,190 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="shortcut icon" type="image/x-icon" href="https://cdn.jawbts.org/photos/logo.png" />
-		<link rel="stylesheet" href="https://cdn.jawbts.org/npm/uikit@3.21.13/dist/css/uikit.xyz.jawbts-theme.min.css" />
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="https://cdn.jawbts.org/photos/logo.png" />
+	<link rel="stylesheet" href="https://cdn.jawbts.org/npm/uikit@3.21.13/dist/css/uikit.xyz.jawbts-theme.min.css" />
 
-		<style>
-			@import url("css/main.css");
-		</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<script src="https://cdn.jawbts.org/jquery/3.7.1/jquery.min.js"></script>
-		<script src="https://cdn.jawbts.org/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
-		<script src="https://cdn.jawbts.org/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
-		<script src="js/lang.js"></script>
-		<script src="js/date.js"></script>
-		<script src="js/tool.js"></script>
+	<style>
+		@import url("css/main.css");
+	</style>
 
-		<title>Tools</title>
-	</head>
-	<body class="uk-background-secondary body-bg">
-		<div class="uk-background-cover uk-background-fixed div-bg">
-			<!--导航栏-大-->
-			<nav name="top"
-				uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200"
-				class="nav-b" uk-navbar>
-				<div class="uk-navbar-left">
-					<ul class="uk-navbar-nav">
-						<li><a href="index.html" key="主页"></a></li>
-						<li><a href="theNews.html" key="新闻"></a></li>
-						<li><a href="projects.html" key="项目"></a></li>
-						<li class="uk-active"><a href="#top" uk-scroll key="工具"></a></li>
-					</ul>
-				</div>
-				<div class="uk-navbar-right">
-					<ul class="uk-navbar-nav">
-						<li><a href="about.html" key="关于"></a></li>
-						<li>
-							<a uk-icon="icon: cog"></a>
-							<div class="uk-navbar-dropdown"
-								uk-dropdown="pos: bottom-left; animation: uk-animation-slide-top-small; duration: 800">
-								<ul class="uk-nav uk-navbar-dropdown-nav">
-									<li>
-										<a key="语言"></a>
-										<div
-											uk-dropdown="pos: left-center; animation: uk-animation-slide-right-small; duration: 800">
-											<ul class="uk-nav uk-dropdown-nav">
-												<li><a class="langchanger" id="en_us">English</a></li>
-												<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!--导航栏-小-->
-			<div class="uk-flex uk-flex-middle">
-				<a class="uk-icon-link nav-s2" uk-icon="icon: table; ratio: 1.5" type="button"></a>
-				<div uk-dropdown>
-					<ul class="uk-nav uk-dropdown-nav">
-						<li class="uk-nav-header" key="页面"></li>
-						<li><a href="index.html" key="主页"></a></li>
-						<li><a href="theNews.html" key="新闻"></a></li>
-						<li><a href="projects.html" key="项目"></a></li>
-						<li class="uk-active"><a href="#top" uk-scroll key="工具"></a></li>
-						<li><a href="about.html" key="关于"></a></li>
-						<li class="uk-nav-header" key="设置"></li>
-						<li><a key="语言"></a></li>
-						<div uk-dropdown="pos: right-center; animation: uk-animation-slide-right-small; duration: 800">
-							<ul class="uk-nav uk-dropdown-nav">
-								<li><a class="langchanger" id="en_us">English</a></li>
-								<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
+	<script src="https://cdn.jawbts.org/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdn.jawbts.org/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jawbts.org/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
+	<script src="js/lang.js"></script>
+	<script src="js/date.js"></script>
+	<script src="js/tool.js"></script>
+
+	<title>Tools</title>
+</head>
+
+<body class="uk-background-secondary body-bg">
+	<div class="uk-background-cover uk-background-fixed div-bg">
+		<!--导航栏-大-->
+		<nav name="top"
+			uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200"
+			class="nav-b" uk-navbar>
+			<div class="uk-navbar-left">
+				<ul class="uk-navbar-nav">
+					<li><a href="index.html" key="主页"></a></li>
+					<li><a href="theNews.html" key="新闻"></a></li>
+					<li><a href="projects.html" key="项目"></a></li>
+					<li class="uk-active"><a href="#top" uk-scroll key="工具"></a></li>
+					<li><a href="https://blogs.jawbts.org" key="博客"></a></li>
+				</ul>
+			</div>
+			<div class="uk-navbar-right">
+				<ul class="uk-navbar-nav">
+					<li><a href="about.html" key="关于"></a></li>
+					<li>
+						<a uk-icon="icon: cog"></a>
+						<div class="uk-navbar-dropdown"
+							uk-dropdown="pos: bottom-left; animation: uk-animation-slide-top-small; duration: 800">
+							<ul class="uk-nav uk-navbar-dropdown-nav">
+								<li>
+									<a key="语言"></a>
+									<div
+										uk-dropdown="pos: left-center; animation: uk-animation-slide-right-small; duration: 800">
+										<ul class="uk-nav uk-dropdown-nav">
+											<li><a class="langchanger" id="en_us">English</a></li>
+											<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
+										</ul>
+									</div>
+								</li>
 							</ul>
 						</div>
-					</ul>
-				</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!--导航栏-小-->
+		<div class="uk-flex uk-flex-middle">
+			<a class="uk-icon-link nav-s2" uk-icon="icon: table; ratio: 1.5" type="button"></a>
+			<div uk-dropdown>
+				<ul class="uk-nav uk-dropdown-nav">
+					<li class="uk-nav-header" key="页面"></li>
+					<li><a href="index.html" key="主页"></a></li>
+					<li><a href="theNews.html" key="新闻"></a></li>
+					<li><a href="projects.html" key="项目"></a></li>
+					<li class="uk-active"><a href="#top" uk-scroll key="工具"></a></li>
+					<li><a href="https://blogs.jawbts.org" key="博客"></a></li>
+					<li><a href="about.html" key="关于"></a></li>
+					<li class="uk-nav-header" key="设置"></li>
+					<li><a key="语言"></a></li>
+					<div uk-dropdown="pos: right-center; animation: uk-animation-slide-right-small; duration: 800">
+						<ul class="uk-nav uk-dropdown-nav">
+							<li><a class="langchanger" id="en_us">English</a></li>
+							<li><a class="langchanger" id="zh_cn">中国大陆</a></li>
+						</ul>
+					</div>
+				</ul>
 			</div>
 		</div>
+	</div>
 
-		<div style="margin-bottom: 20px; margin-top: 5%;" class="uk-grid-large uk-text-center uk-flex-center article-1"
-			uk-grid>
-			<div class="uk-width-5-6">
-				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2"
-						key="MC要塞位置计算器"
-						key_en_us="MC Stronghold Pos Calculator"></h2>
-					<p 	key="扔末影之眼的位置:"
-						key_en_us="The pos you throw the eye of ender:"></p>
-					<div>
-						<input id="mspc_x" type="number" value="" placeholder="x">
-						<input id="mspc_y" type="number" value="" placeholder="z">
-					</div>
-					<p 	key="末影之眼的角度:"
-						key_en_us="The angle of the eye of ender:"></p>
-					<input id="mspc_deg" type="number" value="">
+	<div style="margin-bottom: 20px; margin-top: 5%;" class="uk-grid-large uk-text-center uk-flex-center article-1"
+		uk-grid>
+		<div class="uk-width-5-6">
+			<div class="uk-card uk-card-default uk-card-body article-card">
+				<h2 class="article-h2" key="MC要塞位置计算器" key_en_us="MC Stronghold Pos Calculator"></h2>
+				<p key="扔末影之眼的位置:" key_en_us="The pos you throw the eye of ender:"></p>
+				<div>
+					<input id="mspc_x" type="number" value="" placeholder="x">
+					<input id="mspc_y" type="number" value="" placeholder="z">
+				</div>
+				<p key="末影之眼的角度:" key_en_us="The angle of the eye of ender:"></p>
+				<input id="mspc_deg" type="number" value="">
 
-					<br /> <br />
-					<button class="uk-button uk-button-default" onclick="mspc_save_pos()"
-							key="保存位置" key_en_us="Save Pos"></button>
-					<br /> <br />
-                    <div id="mspc_pos_output"></div>
-					
-					<h2 class="article-h2" id="mspc_output"></h2>
-					
-                    <br />
-				</div>
-			</div>
-			<div class="uk-width-5-6">
-				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2"
-						key="随机数生成器"
-						key_en_us="Random Number Generator"></h2>
-					<h2 class="article-h2" id="r_output"></h2>
-					<button class="uk-button uk-button-default" onclick="start_rand()"
-							key="开关" key_en_us="Switch"></button>
-					<br />
-					<p 	key="总数目 (如10意味着1-10) :"
-						key_en_us="Total (eg 10 means 1-10):"></p>
-					<div>
-						<input id="r_total" type="text" value="10">
-					</div>
-					<p 	key="排除对象 (如10-20,21 注: 10和20也会被排除) :"
-						key_en_us="Exclude (eg 10-20,21 Note: 10 and 20 will also be excluded):"></p>
-					<div>
-						<input id="r_exclude" type="text" value="">
-					</div>
-                    <br />
-                    <button class="uk-button uk-button-default" onclick="save_config()"
-							key="保存配置" key_en_us="Save Configuration"></button>
-                    <div id="r_config_output"></div>
-                    <br />
-				</div>
-			</div>
-			<div class="uk-width-5-6">
-				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2"
-						key="转换: MC天数 -> 年 月 日 星期"
-						key_en_us="Convert: MC Days -> Year, Month, Day, Day of Week"></h2>
-					<button class="uk-button uk-button-default" onclick="input()"
-							key="点击输入天数" key_en_us="Click to enter days"></button>
-					<br /> <br />
-					<div>
-						<p 	style="display: inline;"
-							key="禁用MC准确时间"
-							key_en_us="Disable MC Accurate Time"></p>
-						<input type="checkbox" name="timeOff">
-						<p 	style="display: inline;"
-							key="禁用现实准确时间"
-							key_en_us="Disable Realistic Accurate Time"></p>
-						<input type="checkbox" name="timeOff">
-					</div>
-					<p 	key="在此填入MC一天中的时间 格式为 xx:xx"
-						key_en_us="Fill in the MC's time of day here. The format is xx:xx"></p>
-					<div>
-						<input id="timeHour" type="text" value="">
-						:
-						<input id="timeMinute" type="text" value="">
-					</div>
-					<p id="output"></p>
-				</div>
+				<br /> <br />
+				<button class="uk-button uk-button-default" onclick="mspc_save_pos()" key="保存位置"
+					key_en_us="Save Pos"></button>
+				<br /> <br />
+				<div id="mspc_pos_output"></div>
+
+				<h2 class="article-h2" id="mspc_output"></h2>
+
+				<br />
 			</div>
 		</div>
-		<div style="margin-bottom: 400px; margin-top: 5%;" class="uk-grid-large uk-text-center uk-flex-center article-1"
-			uk-grid>
-			<div class="uk-width-5-6">
-				<div class="uk-card uk-card-default uk-card-body article-card">
-					<h2 class="article-h2"
-						key="转换: Jawbts标准时间戳(JSTS) <-> Jawbts标准时间(JST)"
-						key_en_us="Convert: Jawbts standard timestamp(JSTS) <-> Jawbts standard time(JST)"></h2>
-					<button class="uk-button uk-button-default" onclick="inputSTT()"
-							key="点击输入时间戳(JSTS)" key_en_us="Click to enter a timestamp (JSTS)"></button>
-					<p id="output2"></p>
-					<button class="uk-button uk-button-default" style="margin-bottom: 5px;" onclick="inputTTS()"
-							key="点击生成时间戳" key_en_us="Click Generate Timestamp(JSTS)"></button>
-					<div>
-						<input id="t_year" type="number" value="" placeholder="Year (Starts with 1)">
-						<input id="t_month" type="number" value="" placeholder="Month (1)">
-						<input id="t_day" type="number" value="" placeholder="Day (1)">
-						<input id="t_hour" type="number" value="" placeholder="Hour (0)">
-						<input id="t_minute" type="number" value="" placeholder="Minute (0)">
-						<input id="t_second" type="number" value="" placeholder="Second (0)">
-					</div>
-					<p id="output_TTS"></p>
+		<div class="uk-width-5-6">
+			<div class="uk-card uk-card-default uk-card-body article-card">
+				<h2 class="article-h2" key="随机数生成器" key_en_us="Random Number Generator"></h2>
+				<h2 class="article-h2" id="r_output"></h2>
+				<button class="uk-button uk-button-default" onclick="start_rand()" key="开关" key_en_us="Switch"></button>
+				<br />
+				<p key="总数目 (如10意味着1-10) :" key_en_us="Total (eg 10 means 1-10):"></p>
+				<div>
+					<input id="r_total" type="text" value="10">
 				</div>
+				<p key="排除对象 (如10-20,21 注: 10和20也会被排除) :"
+					key_en_us="Exclude (eg 10-20,21 Note: 10 and 20 will also be excluded):"></p>
+				<div>
+					<input id="r_exclude" type="text" value="">
+				</div>
+				<br />
+				<button class="uk-button uk-button-default" onclick="save_config()" key="保存配置"
+					key_en_us="Save Configuration"></button>
+				<div id="r_config_output"></div>
+				<br />
 			</div>
 		</div>
-		<footer id="nav-bottom">
-			<div>
-				<a style="display:inline-block" href="#top" uk-scroll></a>
-				<h1 style="display:inline-block" class="logo-text">A W B T S</h1>
+		<div class="uk-width-5-6">
+			<div class="uk-card uk-card-default uk-card-body article-card">
+				<h2 class="article-h2" key="转换: MC天数 -> 年 月 日 星期"
+					key_en_us="Convert: MC Days -> Year, Month, Day, Day of Week"></h2>
+				<button class="uk-button uk-button-default" onclick="input()" key="点击输入天数"
+					key_en_us="Click to enter days"></button>
+				<br /> <br />
+				<div>
+					<p style="display: inline;" key="禁用MC准确时间" key_en_us="Disable MC Accurate Time"></p>
+					<input type="checkbox" name="timeOff">
+					<p style="display: inline;" key="禁用现实准确时间" key_en_us="Disable Realistic Accurate Time"></p>
+					<input type="checkbox" name="timeOff">
+				</div>
+				<p key="在此填入MC一天中的时间 格式为 xx:xx" key_en_us="Fill in the MC's time of day here. The format is xx:xx"></p>
+				<div>
+					<input id="timeHour" type="text" value="">
+					:
+					<input id="timeMinute" type="text" value="">
+				</div>
+				<p id="output"></p>
 			</div>
-			<p>© 2021-2025 Jawbts. All Rights Reserved</p>
-		</footer>
-	</body>
+		</div>
+	</div>
+	<div style="margin-bottom: 400px; margin-top: 5%;" class="uk-grid-large uk-text-center uk-flex-center article-1"
+		uk-grid>
+		<div class="uk-width-5-6">
+			<div class="uk-card uk-card-default uk-card-body article-card">
+				<h2 class="article-h2" key="转换: Jawbts标准时间戳(JSTS) <-> Jawbts标准时间(JST)"
+					key_en_us="Convert: Jawbts standard timestamp(JSTS) <-> Jawbts standard time(JST)"></h2>
+				<button class="uk-button uk-button-default" onclick="inputSTT()" key="点击输入时间戳(JSTS)"
+					key_en_us="Click to enter a timestamp (JSTS)"></button>
+				<p id="output2"></p>
+				<button class="uk-button uk-button-default" style="margin-bottom: 5px;" onclick="inputTTS()"
+					key="点击生成时间戳" key_en_us="Click Generate Timestamp(JSTS)"></button>
+				<div>
+					<input id="t_year" type="number" value="" placeholder="Year (Starts with 1)">
+					<input id="t_month" type="number" value="" placeholder="Month (1)">
+					<input id="t_day" type="number" value="" placeholder="Day (1)">
+					<input id="t_hour" type="number" value="" placeholder="Hour (0)">
+					<input id="t_minute" type="number" value="" placeholder="Minute (0)">
+					<input id="t_second" type="number" value="" placeholder="Second (0)">
+				</div>
+				<p id="output_TTS"></p>
+			</div>
+		</div>
+	</div>
+	<footer id="nav-bottom">
+		<div>
+			<a style="display:inline-block" href="#top" uk-scroll></a>
+			<h1 style="display:inline-block" class="logo-text">A W B T S</h1>
+		</div>
+		<p>© 2021-2025 Jawbts. All Rights Reserved</p>
+	</footer>
+</body>
+
 </html>

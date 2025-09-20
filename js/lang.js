@@ -8,6 +8,7 @@ var arrLang = {
 		"语言": "Language",
 		"设置": "Settings",
 		"页面": "Pages",
+		"博客": "Blogs",
 		"了解更多": "Learn More",
 		"由来": "About Us",
 		"探索更多": "Learn More",
@@ -30,11 +31,11 @@ if ('localStorage' in window) {
 }
 
 function apply_language() {
-	$("*").each(function(index, element) {
+	$("*").each(function (index, element) {
 		if (!($(this).attr("key") || $(this).attr("key_" + lang))) {
 			return;
 		}
-		
+
 		if (lang == "zh_cn") {
 			$(this).text($(this).attr("key"));
 			return;
@@ -44,17 +45,17 @@ function apply_language() {
 			$(this).text($(this).attr("key_" + lang));
 			return;
 		}
-		
+
 		$(this).text(arrLang[lang][$(this).attr("key")]);
 	});
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
 	apply_language();
 });
 
-$(document).ready(function() {
-	$(".langchanger").click(function() {
+$(document).ready(function () {
+	$(".langchanger").click(function () {
 		lang = $(this).attr("id");
 		if ('localStorage' in window) {
 			localStorage.setItem("lang", lang);
