@@ -6,25 +6,25 @@ html {
 	.nav-s2 {
 		display: none;
 	}
-	
+
 	#nav-bottom {
 		margin-top: 100px;
 		height: 150px;
 	}
-	
+
 	#nav-bottom p {
 		padding-top: 30px;
 	}
-	
+
 	#nav-bottom .logo-text {
 		padding-top: 30px;
 	}
-	
+
 	#banner .inner header h1 {
 		font-size: 4em;
 		padding-bottom: 0.1em;
 	}
-	
+
 	.body-bg {
 		height: 100%;
 	}
@@ -34,23 +34,23 @@ html {
 	.middle-div {
 		display: none;
 	}
-	
+
 	#banner .inner footer {
 		display: none;
 	}
-	
+
 	#banner .inner header h1 {
 		font-size: 2.5em;
 	}
-	
+
 	.body-bg {
 		height: 100%;
 	}
-	
+
 	.nav-b {
 		display: none;
 	}
-	
+
 	#nav-bottom {
 		margin-top: 50px;
 		height: 100px;
@@ -84,7 +84,7 @@ div .nav-s2 {
 }
 
 #nav-bottom div a {
-	background-image: url("https://cdn.jawbts.org/photos/logo.png");
+	background-image: url("https://cdn.jawbts.org/photos/logo.svg");
 	background-size: 40px;
 	height: 48px;
 	width: 40px;
