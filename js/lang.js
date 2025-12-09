@@ -14,6 +14,7 @@ var arrLang = {
 		"探索更多": "Learn More",
 		"Jawbts - 新 闻": "Jawbts - News",
 		"Jawbts - 项 目": "Jawbts - Projects",
+		"Jawbts - 工 具": "Jawbts - Tools",
 		"Jawbts - 关于我们": "Jawbts - About Us",
 	}
 };
