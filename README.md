@@ -2,13 +2,13 @@
 星渊正在开发它  
 各类问题可以向 Issues 提交
 
-© 2021-2025 Jawbts. 所有权利保留
+© 2021-2026 Jawbts. 所有权利保留
 
 This is the website of jawbts,
 XingYuan___ is developing it   
 All kinds of questions can be submitted to Issues
 
-© 2021-2025 Jawbts. All Rights Reserved
+© 2021-2026 Jawbts. All Rights Reserved
 
 ## 技术性内容
 这个网站的i18n很烂.  
