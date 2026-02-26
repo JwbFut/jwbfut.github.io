@@ -40,7 +40,9 @@ jobs:
       - name: Copy robots.txt
         run: sudo install -m 644 ./robots.txt ./_site/robots.txt
       - name: Copy .well-known
-        run: sudo install -m 644  ./.well-known/ ./_site/.well-known/
+        run: |
+          sudo mkdir -p ./_site/.well-known
+          sudo cp -r ./.well-known/* ./_site/.well-known/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
   # Deployment job
